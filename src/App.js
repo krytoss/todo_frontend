@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+import Todo from './components/Todo';
 
 function App() {
   const [todoList, setTodoList] = useState([])
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <Todo />
       </header>
     </div>
   );

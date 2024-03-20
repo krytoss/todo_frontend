@@ -9,7 +9,7 @@ function App() {
   const [ todoVal, setTodoVal ] = useState(null)
 
   const fetchTodo = useCallback(() => {
-    axios.get('http://localhost:8080/tasks')
+    axios.get('http://localhost:8080/api/tasks')
       .then(response => {
         setTodoList(response.data)
       }, error => {
@@ -18,7 +18,7 @@ function App() {
   }, [ setTodoList ])
 
   const sendTodo = useCallback(() => {
-    axios.post('http://localhost:8080/tasks', {
+    axios.post('http://localhost:8080/api/tasks', {
         text: todoVal
     })
     .then(response => {

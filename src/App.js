@@ -27,7 +27,7 @@ function App() {
     }, error => {
         console.log(error)
     })
-  }, [ todoVal ])
+  }, [ todoVal, fetchTodo ])
 
   useEffect(() => {
     fetchTodo()

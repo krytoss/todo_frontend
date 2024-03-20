@@ -1,8 +1,6 @@
 import InputField from "./InputField"
 import TodoList from "./TodoList"
 import Button from "./Button"
-import { useState, useCallback } from "react"
-import axios from "axios"
 
 const Todo = ({ list, setTodoVal, sendTodo }) => {
 

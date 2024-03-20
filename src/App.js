@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
   const [todoList, setTodoList] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8080/tasks')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        setTodoList(data)
+    axios.get('http://localhost:8080/tasks')
+      .then(response => {
+        setTodoList(response.data)
+      }, error => {
+        console.log(error)
       })
   }, [ setTodoList ])
 

@@ -1,11 +1,11 @@
-const InputField = ({ onChange }) => {
+const InputField = ({ value, setTodoVal }) => {
 
     const handleChange = ( event ) => {
-        onChange(event.target.value)
+        setTodoVal(event.target.value)
     }
 
     return (
-        <input type='text' onChange = { handleChange }/>
+        <input type='text' onChange = { handleChange } value={ value }/>
     )
 }
 

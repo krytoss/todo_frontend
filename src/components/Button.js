@@ -1,11 +1,7 @@
 const Button = ({ value, onClick }) => {
 
-    const handleOnClick = () => {
-        onClick()
-    }
-
     return (
-        <button onClick = { handleOnClick }>{ value }</button>
+        <button>{ value }</button>
     )
 }
 

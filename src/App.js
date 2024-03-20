@@ -6,7 +6,7 @@ import Todo from './components/Todo';
 function App() {
 
   const [ todoList, setTodoList ] = useState([])
-  const [ todoVal, setTodoVal ] = useState(null)
+  const [ todoVal, setTodoVal ] = useState('')
 
   const fetchTodo = useCallback(() => {
     axios.get('http://localhost:8080/api/tasks')
@@ -36,7 +36,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Todo list = { todoList } setTodoVal = { setTodoVal } sendTodo = { sendTodo }/>
+        <Todo
+          list = { todoList }
+          todoVal = { todoVal }
+          setTodoVal = { setTodoVal }
+          sendTodo = { sendTodo }
+        />
       </header>
     </div>
   );

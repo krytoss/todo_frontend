@@ -1,13 +1,15 @@
-import InputField from "./InputField"
 import TodoList from "./TodoList"
-import Button from "./Button"
+import Form from "./Form"
 
-const Todo = ({ list, setTodoVal, sendTodo }) => {
+const Todo = ({ list, todoVal, setTodoVal, sendTodo }) => {
 
     return (
         <div id="todo">
-            <InputField onChange={ setTodoVal }/>
-            <Button value='Add' onClick={ sendTodo }/>
+            <Form
+                todoVal={ todoVal }
+                setTodoVal={ setTodoVal }
+                sendTodo={ sendTodo }
+            />
             <TodoList list = { list }/>
         </div>
     )

@@ -1,11 +1,16 @@
-const InputField = ({ value, setTodoVal }) => {
+const InputField = ({ value, setTodoVal, className }) => {
 
     const handleChange = ( event ) => {
         setTodoVal(event.target.value)
     }
 
     return (
-        <input type='text' onChange = { handleChange } value={ value }/>
+        <input
+            className={ className }
+            type='text'
+            onChange = { handleChange }
+            value={ value }
+        />
     )
 }
 

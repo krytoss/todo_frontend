@@ -12,10 +12,21 @@ const Form = ({ todoVal, setTodoVal, sendTodo }) => {
     return (
         <form onSubmit={handleSubmit}>
             <InputField
+                className={
+                    `hover:bg-gray-100
+                    rounded-l-md outline-none
+                    text-gray-500 px-4`
+                }
                 value={ todoVal }
                 setTodoVal={ setTodoVal }
             />
-            <Button value='Add'/>
+            <Button
+                className={
+                    `bg-green-500 hover:bg-green-700
+                    px-5 rounded-r-md h-full`
+                }
+                value='Add'
+            />
         </form>
     )
 }

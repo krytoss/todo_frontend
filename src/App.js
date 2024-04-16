@@ -19,7 +19,7 @@ function App() {
 
   const sendTodo = useCallback(() => {
     axios.post('http://localhost:8080/api/tasks', {
-        text: todoVal
+        task: todoVal
     })
     .then(response => {
         console.log(response)
@@ -28,6 +28,16 @@ function App() {
         console.log(error)
     })
   }, [ todoVal, fetchTodo ])
+
+  const updateTodo = useCallback((id, data) => {
+    axios.put(`http://localhost:8080/api/tasks/${id}`, data)
+      .then(response => {
+        console.log(response)
+        fetchTodo()
+      }, error => {
+        console.log(error)
+      })
+  }, [ fetchTodo ])
 
   useEffect(() => {
     fetchTodo()
@@ -41,6 +51,7 @@ function App() {
           todoVal = { todoVal }
           setTodoVal = { setTodoVal }
           sendTodo = { sendTodo }
+          updateTodo = { updateTodo }
         />
       </header>
     </div>

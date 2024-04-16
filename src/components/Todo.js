@@ -1,7 +1,7 @@
 import TodoList from "./TodoList"
 import Form from "./Form"
 
-const Todo = ({ list, todoVal, setTodoVal, sendTodo }) => {
+const Todo = ({ list, todoVal, setTodoVal, sendTodo, updateTodo }) => {
 
     return (
         <div id="todo">
@@ -10,7 +10,7 @@ const Todo = ({ list, todoVal, setTodoVal, sendTodo }) => {
                 setTodoVal={ setTodoVal }
                 sendTodo={ sendTodo }
             />
-            <TodoList list = { list }/>
+            <TodoList list = { list } updateTodo = { updateTodo }/>
         </div>
     )
 

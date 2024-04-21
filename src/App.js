@@ -7,9 +7,10 @@ function App() {
 
   const [ todoList, setTodoList ] = useState([])
   const [ todoVal, setTodoVal ] = useState('')
+  const API_URL = 'https://api.krytos.online'
 
   const fetchTodo = useCallback(() => {
-    axios.get('http://localhost:8080/api/tasks')
+    axios.get(`${API_URL}/tasks`)
       .then(response => {
         setTodoList(response.data)
       }, error => {
@@ -18,7 +19,7 @@ function App() {
   }, [ setTodoList ])
 
   const sendTodo = useCallback(() => {
-    axios.post('http://localhost:8080/api/tasks', {
+    axios.post(`${API_URL}/tasks`, {
         task: todoVal
     })
     .then(response => {
@@ -30,7 +31,7 @@ function App() {
   }, [ todoVal, fetchTodo ])
 
   const updateTodo = useCallback((id, data) => {
-    axios.put(`http://localhost:8080/api/tasks/${id}`, data)
+    axios.put(`${API_URL}/tasks/${id}`, data)
       .then(response => {
         console.log(response)
         fetchTodo()
